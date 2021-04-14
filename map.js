@@ -92,5 +92,10 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+  
+    const arrayOfArrays = arr.map((item) => {
+        return [['name', item.name], ['type', item.type]]
+    })
+
+    return arrayOfArrays;
 }
