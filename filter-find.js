@@ -98,9 +98,9 @@ Output:
 
 export function listNamesOfAllFruits(arr) {
     
-    return arr.filter((product) => product.category === 'fruit' ).map((fruit) => fruit.id);
+    const fruitArray = arr.filter((product) => product.category === 'fruit' )
+    return fruitArray.map((fruit) => fruit.id);
     
-   
     
     
 }

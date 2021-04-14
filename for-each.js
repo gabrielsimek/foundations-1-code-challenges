@@ -46,7 +46,7 @@ export function makeSpanishLanguageArray(arr) {
     arr.forEach((item) => {
         
         arrayDeEspanol.push({nombre:item.name, tipo: item.type})
-        console.log(item)
+        
       
         
     })
