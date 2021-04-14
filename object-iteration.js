@@ -23,8 +23,8 @@ export function makeMoreScreamingKeys(someObject) {
     const someObjectArray = Object.entries(someObject);
     console.log(someObjectArray)
     let screamingObject = {}
-    for (let [key, value] of someObjectArray){
-        screamingObject[key.toUpperCase()] = value;
+    for (let [something, value] of someObjectArray){
+        screamingObject[something] = value;
     }
     return screamingObject
 
