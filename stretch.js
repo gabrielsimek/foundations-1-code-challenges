@@ -50,28 +50,20 @@ Output:
 */
 
 export function organizePricesByKey(arr) {
-    
-    
-    // const newObjectArray = arr.map((item) => {
-    //     const newKey = item.id
-    //     const newValue = item.price 
-    //      const newObject = ( { [newKey]: newValue } )
-    //      return newObject
-        
-    // })
-    const newObjectArray = Object.entries(arr);
+    const ObjectIds = arr.map((item) => item.id)
+    console.log(ObjectIds)
 
-    for (let [key, value] of newObjectArray) {
-        console.log(value)
+    const newObject = {}
+    for (let id of ObjectIds ) {
+        newObject[id] = arr.filter((item) => item.id === id)[0].price
     }
 
-    //  const [ one, two, three, four ] = newObjectArray;
-    // console.log(one, two, three, four);
-    // const newObject = { one, two, three, four }
-    // console.log(newObject)
-    // const newObject = { newObjectArray[0], }
-    // console.log(newObject)
- 
+  
+
+    
+
+    return newObject;
+    
 }
 
 /*
@@ -111,21 +103,16 @@ Output:
 */
 
 export function makeAHashMap(arr) {
-//     const something = arr.map((item) => {
-//         let hashKey = item.id
-//        return { [hashKey]: { ...item } }
-//     })
-//    let newObject = {}
-//    for (let item of arr) {
-//        let hashKey = item.id
-//     //    console.log(hashKey)
-//        newObject[hashKey]: { ...item } 
-//        console.log(newObject)
-
-      
-//    }
-//     // console.log(newObject)
-//     return newObject;
+    const newObject = {}
+    const names = arr.map((item) => item.id);
+    
+    for (let i = 0; i < names.length; i++){
+        
+        newObject[names[i]] = arr.filter((item) => item)[i]
+        
+    }
+   
+return newObject
  }
 
 
@@ -139,13 +126,20 @@ Output:
 */
 
 export function countByCategory(arr) {
-    const categories = [];
-    for (let item of arr) {
-        categories.push((item.category))
+   const newObject = {}
+   const ObjectIds = arr.map((item) => item.id)
+   console.log(ObjectIds);
+    for (let arrayItem of arr) {
+        let count = 0;
+        arr.forEach((item) => {
+            if (item.category === arrayItem.category){
+                count++
+            }
+        })
+
+        newObject[arrayItem.category] = count
+        
     }
-    const [ one, two, three, four, five] = categories;
-    // console.log(one, two, three, four, five)
-    const result = arr.filter(item => item.category === 'fruit').length;
-    
-    return {};
+
+   return newObject
 }

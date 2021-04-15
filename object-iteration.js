@@ -24,7 +24,7 @@ export function makeMoreScreamingKeys(someObject) {
     console.log(someObjectArray)
     let screamingObject = {}
     for (let [something, value] of someObjectArray){
-        screamingObject[something] = value;
+        screamingObject[something.toUpperCase()] = value;
     }
     return screamingObject
 
